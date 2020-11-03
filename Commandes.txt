@@ -1,0 +1,85 @@
+/****************************** lab6: Variables d'environnement ************************/
+/****************************** Commandes utilisées ************************************/
+
+
+
+Rôle: Les variables d'environnement permettent de modifier le comportement des commandes
+sans avoir besoin de leur passer des options à chaque fois que l'on tape la commande.
+
+/*********************/
+/*** 1ère question ***/
+/*********************/
+
+En tapant la commande "env" sur le terminal, on observe toutes les variables d'environnement
+de notre système notamment "SHELL" qui nous renseigne sur le type de shell utilisé, "PWD"
+qui donne le chemin du répertoire sur lequel on travaille, "USERNAME" pour le nom de
+l'utilisateur, "HOME" le répertoire parent, "PATH" qui est une variable du système qui
+indique où sont les programmes exécutables sur un ordinateur.
+
+HOME = /home/student
+
+/*********************/
+/*** 2ème question ***/
+/*********************/
+
+Pour afficher le contenu de la variable PATH, on tape "echo $PATH" et on obtient:
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+
+/*********************/
+/*** 3ème question ***/
+/*********************/
+
+Mon bash script nommé "process.sh" et créé via "vim process.sh" contient la commande
+"ps r" permettant d'afficher la liste des process en cours d'exécution.
+
+/*********************/
+/*** 4ème question ***/
+/*********************/
+
+Pour déplacer ce script dans le répertoire /opt, il suffit de faire:
+sudo mv process.sh /opt (sudo pour se mettre en mode utilisateur) car on n'a pas la
+permission.
+
+/*********************/
+/*** 5ème question ***/
+/*********************/
+
+Pour permettre à un utilisateur d'exécuter ce script à partir de n'importe quel
+endroit, il suffit de changer la variable PATH et y ajouter le répertoire dans lequel
+le script se situe en faisant: export PATH=$PATH:/opt.
+
+/*********************/
+/*** 6ème question ***/
+/*********************/
+
+Par contre, en relançant, le script n'est pas trouvé car une fois qu'on a ajouté un
+répertoire au PATH, fermer le terminal annulera les effets de la commande. Modifier la
+variable PATH depuis le terminal est temporaire.
+
+/*********************/
+/*** 7ème question ***/
+/*********************/
+
+Le fichier script qui s'exécute automatiquement lors du démarrage d'un nouveau terminal
+est le fichier .bashrc . C'est grâce à ce fichier de configuration qu'on pourra rendre
+le shell bash personnalisable. Afin que le script soit accessible de manière permanente,
+il faudra modifier ce fichier en rajoutant la commande "export PATH" à la fin du fichier.
+
+Ensuite, dans le terminal, il suffit d'actualiser le fichier .bashrc en tapant "source
+.bashrc".
+
+/*********************/
+/*** 8ème question ***/
+/*********************/
+
+En relançant à nouveau le script cette fois-ci à partir du répertoire $HOME, le script
+"process.sh" est bien reconnu et le résultat attendu est obtenu => plus besoin de faire
+de faire "./process.sh" pour ce script.
+ 
+AN: On n'oublie pas de vérifier la variable si elle a bien été mise à jour.
+
+
+
+
+
+
