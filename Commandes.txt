@@ -76,7 +76,7 @@ En relançant à nouveau le script cette fois-ci à partir du répertoire $HOME,
 "process.sh" est bien reconnu et le résultat attendu est obtenu => plus besoin de faire
 de faire "./process.sh" pour ce script.
  
-AN: On n'oublie pas de vérifier la variable si elle a bien été mise à jour.
+AN: On n'oublie pas de vérifier la variable PATH si elle a bien été mise à jour.
 
 
 
